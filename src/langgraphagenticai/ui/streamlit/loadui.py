@@ -34,6 +34,8 @@ class LoadStremlitUI:
             llm_options = self.config.get_llm_options()
             usecase_options = self.config.get_usecase_options()
 
+            self.user_controls["selected_llm"] = st.selectbox("Select LLM", llm_options)
+
             if self.user_controls["selected_llm"] == "Groq":
                 model_options = self.config.get_groq_model_options()
                 self.user_controls["selected_groq_model"] = st.selectbox("Selected Model", model_options)
